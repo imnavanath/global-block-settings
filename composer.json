@@ -1,0 +1,14 @@
+{
+  "name": "imnavanath/global-block-settings",
+  "description": "The plugin is about setting up page/post level global WordPress block settings.",
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.5",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+    "phpcompatibility/php-compatibility": "^9.3",
+    "wp-coding-standards/wpcs": "^2.2"
+  },
+  "scripts": {
+    "format": "vendor/bin/phpcbf",
+    "lint": "vendor/bin/phpcs"
+  }
+}
