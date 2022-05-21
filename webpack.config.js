@@ -20,6 +20,6 @@ module.exports = {
 	output: {
 		...defaultConfig.output,
 		filename: '[name].js',
-		path: path.resolve( __dirname, 'assets/build' ),
+		path: path.resolve( __dirname, 'assets' ),
 	},
 };

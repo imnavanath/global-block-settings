@@ -49,6 +49,7 @@ div#gbs_meta_box {
     overflow-y: auto;
     margin: 0;
     padding: 0;
+	height: 100%;
 }
 .gbs-meta-settings-table.widefat {
     border-width: 0;
@@ -58,19 +59,19 @@ div#gbs_meta_box {
     border-bottom-width: 0;
 }
 .gbs-extra-spacing .gbs-border {
-    border-right: 1px solid #E1E1E1;
+    border-right: 1px solid #dddddd;
 }
 .gbs-extra-spacing-bottom td {
-    border-bottom: 1px solid #E1E1E1;
+    border-bottom: 1px solid #dddddd;
 }
 td.gbs-meta-setting-row-heading {
-    border-right: 1px solid #E1E1E1;
-    padding: 12px 20px 12px 25px;
-    width: 25%;
+    border-right: 1px solid #dddddd;
+    padding: 15px 20px 15px 25px;
+    width: 30%;
     vertical-align: middle;
 }
 .gbs-meta-settings-table .gbs-meta-setting-row-content {
-    padding: 12px 20px 12px 25px;
+    padding: 15px 20px 15px 25px;
     position: relative;
     width: 75%;
 }

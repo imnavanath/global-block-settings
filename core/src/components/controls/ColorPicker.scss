@@ -1,0 +1,65 @@
+.gbs--color-field {
+	display: flex;
+	align-items: center;
+	line-height: 1;
+	.gbs--colorpicker-swatch-wrap {
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+	}
+	.gbs--colorpicker-swatch {
+		padding: 0;
+		background: #fafafa;
+		display: inline-block;
+		margin: 0;
+		border-right: 1px solid #ddd;
+		box-shadow: inset 0 0 0 3px #fff;
+	}
+	.gbs--color-picker-popover {
+		position: absolute;
+		z-index: 2;
+		margin: 8px 0;
+	}
+	.gbs--color-picker-cover {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+	.sketch-picker {
+		font-weight: 400;
+	}
+	.gbs--field__data--content {
+		.gbs--colorpicker-selector {
+			display: flex;
+			align-items: center;
+		}
+		.gbs--colorpicker-swatch-wrap {
+			border: 1px solid #ddd;
+			border-radius: 2px;
+			background: #fff;
+			color: #444;
+		}
+		.gbs--colorpicker-label {
+			font-weight: 400;
+			padding: 5px 7px;
+		}
+		.gbs--colorpicker-reset {
+			padding: 6px;
+			cursor: pointer;
+			span.dashicons {
+				font-size: 18px;
+			}
+		}
+	}
+	.gbs--color-picker {
+		position: relative;
+		input {
+			margin: 0;
+		}
+		input[id^="rc-editable-input-"] {
+			width: 100% !important;
+		}
+	}
+}

@@ -9,7 +9,7 @@ module.exports = function (grunt) {
 					'**',
 					'*.zip',
 					'!node_modules/**',
-					'!build/**',
+					'!assets/**',
 					'!css/sourcemap/**',
 					'!admin/src/**',
 					'!.git/**',

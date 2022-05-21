@@ -108,7 +108,7 @@ class GBS_Loader {
 	public function enqueue_block_editor_assets() {
 
 		$version           = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? time() : GBS_VER;
-		$script_asset_path = GBS_DIR . 'assets/build/editor.asset.php';
+		$script_asset_path = GBS_DIR . 'assets/editor.asset.php';
 		$script_info       = file_exists( $script_asset_path ) ? include $script_asset_path : array(
 			'dependencies' => [],
 			'version'      => $version,
@@ -116,14 +116,14 @@ class GBS_Loader {
 		$script_deps       = $script_info['dependencies'];
 
 		wp_enqueue_script(
-			'gbs-editor',
-			GBS_URL . 'assets/build/editor.js',
+			'gbs-global-build',
+			GBS_URL . 'assets/editor.js',
 			$script_deps,
 			$version,
 			true
 		);
 
-		wp_enqueue_style( 'gbs-editor', GBS_URL . 'assets/build/meta.css', [], $version );
+		wp_enqueue_style( 'gbs-global-build', GBS_URL . 'assets/editor.css', [], $version );
 	}
 }
 

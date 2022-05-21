@@ -1,7 +1,6 @@
 /**
  * Personal Social Connection Component.
  */
-
 const { __ } = wp.i18n;
 import Icons from '@Editor/components/Icons';
 
