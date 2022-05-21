@@ -21,11 +21,11 @@ The plugin is about setting up page/post level global WordPress block settings.
 
 ## Frequently Asked Questions ##
 
-** Q. For what post types these global settings will appear? **
+**Q. For what post types these global settings will appear?**
 
 A. For all post types where you have WordPress block editor you will get these global settings.
 
-** Q. Not getting pinned "Global Block Settings" icon at top-right corner in editor? **
+**Q. Not getting pinned "Global Block Settings" icon at top-right corner in editor?**
 
 A. If you are not getting pinned icon at top-right corner then click the top-right corner's three vertical dots `Options` and you will get `Global Block Settings` option under PLUGINS section. Click on it to make it pin, also you can mark this star so everytime it will be appear as pinned.
 
