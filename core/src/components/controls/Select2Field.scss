@@ -1,0 +1,12 @@
+.gbs-selection-field {
+	display: flex;
+	align-items: center;
+	.gbs-select2-input {
+		border-color: #ddd;
+		border-radius: 2px;
+		width: 300px;
+	}
+}
+.gbs-selection-field label {
+	display: inline-block;
+}

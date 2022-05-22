@@ -8,6 +8,8 @@
 
 namespace GBS;
 
+use GBS\Core\Editor_Init;
+
 /**
  * GBS_Loader
  *
@@ -48,7 +50,7 @@ class GBS_Loader {
 
 		add_action( 'plugins_loaded', [ $this, 'load_textdomain' ] );
 
-		add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_block_editor_assets' ], 9 );
+		add_action( 'plugins_loaded', [ $this, 'setup_classes' ] );
 	}
 
 	/**
@@ -100,30 +102,14 @@ class GBS_Loader {
 	}
 
 	/**
-	 * Enqueue editor assets.
+	 * Include required classes.
 	 *
-	 * @since 1.0.0
-	 * @return void
+	 * @since x.x.x
 	 */
-	public function enqueue_block_editor_assets() {
-
-		$version           = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? time() : GBS_VER;
-		$script_asset_path = GBS_DIR . 'assets/editor.asset.php';
-		$script_info       = file_exists( $script_asset_path ) ? include $script_asset_path : array(
-			'dependencies' => [],
-			'version'      => $version,
-		);
-		$script_deps       = $script_info['dependencies'];
-
-		wp_enqueue_script(
-			'gbs-global-build',
-			GBS_URL . 'assets/editor.js',
-			$script_deps,
-			$version,
-			true
-		);
-
-		wp_enqueue_style( 'gbs-global-build', GBS_URL . 'assets/editor.css', [], $version );
+	public function setup_classes() {
+		if ( is_admin() ) {
+			Editor_Init::get_instance();
+		}
 	}
 }
 

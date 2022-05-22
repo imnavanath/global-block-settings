@@ -142,3 +142,25 @@ p.gbs-social-links-wrap a {
 p.gbs-social-links-wrap a:hover {
     color: var(--wp-admin-theme-color);
 }
+.gbs-settings-modal {
+	.edit-post-preferences-modal {
+		padding: 2em;
+		width: auto;
+		height: 100%;
+	}
+	.edit-post-preferences__tabs {
+		display: inline-flex;
+		width: 100%;
+		.components-tab-panel__tab-content {
+			padding-left: 2em;
+			margin-left: 20px;
+			width: 70%;
+		}
+		.components-tab-panel__tabs {
+			position: relative;
+			width: 30%;
+			top: 0;
+			left: 0;
+		}
+	}
+}

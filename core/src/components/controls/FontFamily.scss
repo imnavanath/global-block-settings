@@ -1,0 +1,24 @@
+.gbs-font-family-field {
+	.gbs-font-weight-field {
+		margin-top: 30px;
+	}
+}
+.gbs-font-family-field .gbs-font-weight-field {
+	margin-top: 30px;
+}
+.gbs__control:hover,
+.gbs__control:active,
+.gbs__control.gbs__control--is-focused {
+    border-color: #aaa;
+    box-shadow: none;
+}
+.gbs__value-container {
+	div:last-child {
+		margin: 0;
+		padding: 0;
+		color: #444;
+		input:focus {
+			box-shadow: none;
+		}
+	}
+}

@@ -9,13 +9,15 @@ import { Modal } from '@wordpress/components';
 const { __ } = wp.i18n;
 
 import Icons from '@Editor/components/Icons';
-import { ColorPicker, SocialConnection } from '@Editor/components/controls';
+import { ColorPicker, SocialConnection, FontFamily } from '@Editor/components/controls';
 
 const GlobalMetaSetup = props => {
 
 	const [ isOpenColorModal, setColorModalOpen ] = useState( false );
 	const openColorModal = () => setColorModalOpen( true );
 	const closeColorModal = () => setColorModalOpen( false );
+
+	const [ typoActiveTab, settypoActiveTab ] = useState( 'text' );
 
 	const [ isOpenTypoModal, setTypoModalOpen ] = useState( false );
 	const openTypoModal = () => setTypoModalOpen( true );
@@ -60,6 +62,29 @@ const GlobalMetaSetup = props => {
 			</tr>
 		);
 	} );
+
+	const typoModalSettings = ( setting ) => {
+		return (
+			<div role="tabpanel" id={ `tab-panel-${ setting }-view` } className="components-tab-panel__tab-content">
+				<section className="edit-post-preferences-modal__section">
+					<h2 className='edit-post-preferences-modal__section-title gbs-typo-setting-heading'> {__( 'Font', 'gbs' )} </h2>
+					<section className="components-base-control__field">
+						<FontFamily
+							id={ `gbs-meta-${ setting }-font-family` }
+							name={ `gbs-meta-${ setting }-font-family` }
+							value={ ( undefined !== props.meta[`gbs-meta-${ setting }-font-family`] && ''!== props.meta[`gbs-meta-${ setting }-font-family`] ? props.meta[`gbs-meta-${ setting }-font-family`] : '' ) }
+							font_weight_name={
+								`gbs-meta-${ setting }-font-weight`
+							}
+							font_weight_value={
+								( undefined !== props.meta[`gbs-meta-${ setting }-font-weight`] && ''!== props.meta[`gbs-meta-${ setting }-font-weight`] ? props.meta[`gbs-meta-${ setting }-font-weight`] : '' )
+							}
+						/>
+					</section>
+				</section>
+			</div>
+		);
+	};
 
 	const modalFooter = () => {
 		return (
@@ -145,12 +170,156 @@ const GlobalMetaSetup = props => {
 							shouldCloseOnClickOutside = { false }
 							onRequestClose={ closeTypoModal }
 						>
-							<div className="gbs-meta-settings-content">
-								<table className="gbs-meta-settings-table widefat">
-									<tbody>
-										{ colorModalSettings }
-									</tbody>
-								</table>
+							<div className='edit-post-preferences-modal'>
+								<div className='edit-post-preferences__tabs'>
+									<div role="tablist" aria-orientation="vertical" className="components-tab-panel__tabs">
+										<button
+											className={ `${
+												'text' === typoActiveTab
+													? 'components-button components-tab-panel__tabs-item is-active'
+													: 'components-button components-tab-panel__tabs-item'
+											}` }
+											onClick={ () => {
+												settypoActiveTab( 'text' );
+											} }
+										>
+											{ __( 'Text', 'gbs' ) }
+										</button>
+										<button
+											className={ `${
+												'link' === typoActiveTab
+													? 'components-button components-tab-panel__tabs-item is-active'
+													: 'components-button components-tab-panel__tabs-item'
+											}` }
+											onClick={ () => {
+												settypoActiveTab( 'link' );
+											} }
+										>
+											{ __( 'Link', 'gbs' ) }
+										</button>
+										<button
+											className={ `${
+												'headings' === typoActiveTab
+													? 'components-button components-tab-panel__tabs-item is-active'
+													: 'components-button components-tab-panel__tabs-item'
+											}` }
+											onClick={ () => {
+												settypoActiveTab( 'headings' );
+											} }
+										>
+											{ __( 'Headings (H1-H6)', 'gbs' ) }
+										</button>
+										<button
+											className={ `${
+												'h1-heading' === typoActiveTab
+													? 'components-button components-tab-panel__tabs-item is-active'
+													: 'components-button components-tab-panel__tabs-item'
+											}` }
+											onClick={ () => {
+												settypoActiveTab( 'h1-heading' );
+											} }
+										>
+											{ __( 'H1 Heading', 'gbs' ) }
+										</button>
+										<button
+											className={ `${
+												'h2-heading' === typoActiveTab
+													? 'components-button components-tab-panel__tabs-item is-active'
+													: 'components-button components-tab-panel__tabs-item'
+											}` }
+											onClick={ () => {
+												settypoActiveTab( 'h2-heading' );
+											} }
+										>
+											{ __( 'H2 Heading', 'gbs' ) }
+										</button>
+										<button
+											className={ `${
+												'h3-heading' === typoActiveTab
+													? 'components-button components-tab-panel__tabs-item is-active'
+													: 'components-button components-tab-panel__tabs-item'
+											}` }
+											onClick={ () => {
+												settypoActiveTab( 'h3-heading' );
+											} }
+										>
+											{ __( 'H3 Heading', 'gbs' ) }
+										</button>
+										<button
+											className={ `${
+												'h4-heading' === typoActiveTab
+													? 'components-button components-tab-panel__tabs-item is-active'
+													: 'components-button components-tab-panel__tabs-item'
+											}` }
+											onClick={ () => {
+												settypoActiveTab( 'h4-heading' );
+											} }
+										>
+											{ __( 'H4 Heading', 'gbs' ) }
+										</button>
+										<button
+											className={ `${
+												'h5-heading' === typoActiveTab
+													? 'components-button components-tab-panel__tabs-item is-active'
+													: 'components-button components-tab-panel__tabs-item'
+											}` }
+											onClick={ () => {
+												settypoActiveTab( 'h5-heading' );
+											} }
+										>
+											{ __( 'H5 Heading', 'gbs' ) }
+										</button>
+										<button
+											className={ `${
+												'h6-heading' === typoActiveTab
+													? 'components-button components-tab-panel__tabs-item is-active'
+													: 'components-button components-tab-panel__tabs-item'
+											}` }
+											onClick={ () => {
+												settypoActiveTab( 'h6-heading' );
+											} }
+										>
+											{ __( 'H6 Heading', 'gbs' ) }
+										</button>
+									</div>
+
+									{ 'text' === typoActiveTab &&
+										typoModalSettings( 'text' )
+									}
+
+									{ 'link' === typoActiveTab &&
+										typoModalSettings( 'link' )
+									}
+
+									{ 'headings' === typoActiveTab &&
+										typoModalSettings( 'headings' )
+									}
+
+									{ 'h1-heading' === typoActiveTab &&
+										typoModalSettings( 'h1-heading' )
+									}
+
+									{ 'h2-heading' === typoActiveTab &&
+										typoModalSettings( 'h2-heading' )
+									}
+
+									{ 'h3-heading' === typoActiveTab &&
+										typoModalSettings( 'h3-heading' )
+									}
+
+									{ 'h4-heading' === typoActiveTab &&
+										typoModalSettings( 'h4-heading' )
+									}
+
+									{ 'h5-heading' === typoActiveTab &&
+										typoModalSettings( 'h5-heading' )
+									}
+
+									{ 'h6-heading' === typoActiveTab &&
+										typoModalSettings( 'h6-heading' )
+									}
+
+								</div>
 							</div>
 							{ modalFooter() }
 						</Modal>
