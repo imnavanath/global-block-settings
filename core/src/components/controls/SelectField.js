@@ -5,6 +5,7 @@ function SelectField( props ) {
 	const {
 		name,
 		id,
+		label,
 		options,
 		onSelect,
 		prodata,
@@ -26,6 +27,7 @@ function SelectField( props ) {
 
 	return (
 		<div className="gbs-field gbs-select-option">
+			<h2 className='edit-post-preferences-modal__section-title gbs-typo-setting-heading'> { label } </h2>
 			<div className="gbs-field__data">
 				<div className="gbs-field__data--content">
 					<select

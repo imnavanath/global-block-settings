@@ -144,7 +144,7 @@ p.gbs-social-links-wrap a:hover {
 }
 .gbs-settings-modal {
 	.edit-post-preferences-modal {
-		padding: 2em;
+		padding: 1.5em;
 		width: auto;
 		height: 100%;
 	}
@@ -161,6 +161,8 @@ p.gbs-social-links-wrap a:hover {
 			width: 30%;
 			top: 0;
 			left: 0;
+			border-right: 1px solid #ddd;
+			padding-right: 1em;
 		}
 	}
 }

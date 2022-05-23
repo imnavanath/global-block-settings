@@ -1,0 +1,136 @@
+.gbs--responsive-slider-field {
+    position: relative;
+    max-width: 299px;
+}
+.gbs--responsive-slider-field .wrapper {
+	position: relative;
+	display: flex;
+	margin-top: 15px;
+}
+.gbs--responsive-slider-field .gbs--responsive-input-field-wrapper {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.gbs--responsive-slider-field input[type=range] {
+	position: inherit;
+}
+.gbs--responsive-slider-field select, .customize-control.customize-control-select select {
+	color: #32373c;
+}
+.gbs--responsive-slider-field .gbs--responsive-input-field-wrapper {
+	display: none;
+}
+.gbs--responsive-slider-field .gbs--responsive-input-field-wrapper.active {
+	display: flex;
+}
+.gbs--responsive-slider-field .components-base-control {
+	width: 100%;
+}
+.gbs--responsive-slider-field .slider-control-label {
+	cursor: default;
+	margin-top: 3px;
+}
+/**
+* Responsive Icons
+*/
+.gbs--responsive-slider-btns {
+	position: absolute;
+    right: -5px;
+    top: -4px;
+    padding: 5px;
+    margin: 0;
+}
+.gbs--responsive-slider-btns span.dashicon {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+.gbs--responsive-slider-btns > li {
+	margin-bottom: 0;
+	display: none;
+}
+.gbs--responsive-slider-btns > li.active {
+	display: inline-block;
+}
+.gbs--responsive-slider-btns button[type="button"] {
+	padding: 0;
+	cursor: pointer;
+	background: none;
+	border: none;
+	opacity: .75;
+	outline: none;
+}
+.gbs--responsive-slider-btns button[type="button"] > i {
+	cursor: pointer;
+	width: 15px;
+	height: 15px;
+	font-size: 15px;
+}
+.gbs--responsive-slider-field .wrapper .components-base-control, .gbs--responsive-slider-field .wrapper .gbs--responsive-input-field-wrapper.active {
+	width: 100%;
+	display: inline-block;
+}
+.gbs--responsive-slider-field .wrapper .ast-resp-slider-reset-wrap {
+	margin-left: 5px;
+	margin-top: 4px;
+}
+.gbs--responsive-slider-field .wrapper .ast-resp-slider-reset-wrap {
+	top: 4px;
+	right: 0;
+}
+.gbs--responsive-slider-field .components-input-control input.components-input-control__input {
+	-moz-appearance: textfield;
+}
+.gbs--responsive-slider-field input.components-input-control__input::-webkit-inner-spin-button,
+.gbs--responsive-slider-field input.components-input-control__input::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+}
+.gbs--responsive-slider-field .components-input-control__container input.components-input-control__input {
+	display: block;
+	border-radius: 2px 0 0 2px;
+	box-shadow: none;
+	transition: all 0.3s;
+	border: 1px solid #ddd;
+	width: 64px;
+    height: 30px;
+}
+.gbs--responsive-slider-field input.components-input-control__input:hover,
+.gbs--responsive-slider-field input.components-input-control__input:focus,
+.gbs--responsive-slider-field input.components-input-control__input:active {
+	border-color: #1e8cbe;
+	border-radius: 2px;
+	outline: none;
+}
+.gbs--responsive-slider-field .gbs--field-slider-wrap {
+	position: relative;
+}
+.gbs--responsive-slider-field .gbs--field-slider-wrap .gbs--field-range-unit {
+	border: 1px solid #ddd;
+	border-left: none;
+	font-size: 11px;
+	font-weight: 500;
+	text-transform: uppercase;
+	width: 35px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.gbs--responsive-slider-field .components-input-control__container {
+	margin-left: 5px;
+}
+.gbs--responsive-slider-field .components-input-control__container div.components-input-control__backdrop {
+	border: none;
+	border-radius: 2px 0 0 2px;
+	box-shadow: none;
+}
+.gbs--responsive-slider-field .ast-resp-slider-reset-wrap {
+	position: absolute;
+	display: inline-block;
+	line-height: 1;
+	right: 0;
+}
+.gbs--responsive-slider-field .ast-resp-slider-reset-wrap {
+	top: 1px;
+}

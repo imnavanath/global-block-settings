@@ -9,7 +9,7 @@ import { Modal } from '@wordpress/components';
 const { __ } = wp.i18n;
 
 import Icons from '@Editor/components/Icons';
-import { ColorPicker, SocialConnection, FontFamily } from '@Editor/components/controls';
+import { ColorPicker, SocialConnection, FontFamily, ResponsiveSlider, SelectField } from '@Editor/components/controls';
 
 const GlobalMetaSetup = props => {
 
@@ -67,11 +67,11 @@ const GlobalMetaSetup = props => {
 		return (
 			<div role="tabpanel" id={ `tab-panel-${ setting }-view` } className="components-tab-panel__tab-content">
 				<section className="edit-post-preferences-modal__section">
-					<h2 className='edit-post-preferences-modal__section-title gbs-typo-setting-heading'> {__( 'Font', 'gbs' )} </h2>
 					<section className="components-base-control__field">
 						<FontFamily
 							id={ `gbs-meta-${ setting }-font-family` }
 							name={ `gbs-meta-${ setting }-font-family` }
+							label={ __( 'Font', 'gbs' ) }
 							value={ ( undefined !== props.meta[`gbs-meta-${ setting }-font-family`] && ''!== props.meta[`gbs-meta-${ setting }-font-family`] ? props.meta[`gbs-meta-${ setting }-font-family`] : '' ) }
 							font_weight_name={
 								`gbs-meta-${ setting }-font-weight`
@@ -79,6 +79,60 @@ const GlobalMetaSetup = props => {
 							font_weight_value={
 								( undefined !== props.meta[`gbs-meta-${ setting }-font-weight`] && ''!== props.meta[`gbs-meta-${ setting }-font-weight`] ? props.meta[`gbs-meta-${ setting }-font-weight`] : '' )
 							}
+							onChange={ ( val ) => {
+								props.setMetaFieldValue( val, `gbs-meta-${ setting }-font-size` );
+							} }
+						/>
+						<SelectField
+							id={ `gbs-meta-${ setting }-text-transform` }
+							name={ `gbs-meta-${ setting }-text-transform` }
+							label={ __( 'Text Transform', 'gbs' ) }
+							value={ ( undefined !== props.meta[`gbs-meta-${ setting }-text-transform`] && ''!== props.meta[`gbs-meta-${ setting }-text-transform`] ? props.meta[`gbs-meta-${ setting }-text-transform`] : '' ) }
+							options={ [
+								{
+									value: '',
+									label: __( 'Inherit', 'gbs' ),
+								},
+								{
+									value: 'none',
+									label: __( 'None', 'gbs' ),
+								},
+								{
+									value: 'capitalize',
+									label: __( 'Capitalize', 'gbs' ),
+								},
+								{
+									value: 'uppercase',
+									label: __( 'Uppercase', 'gbs' ),
+								},
+								{
+									value: 'lowercase',
+									label: __( 'Lowercase', 'gbs' ),
+								},
+							] }
+							onSelect={ ( val ) => {
+								props.setMetaFieldValue( val, `gbs-meta-${ setting }-text-transform` );
+							} }
+						/>
+						<ResponsiveSlider
+							id={ `gbs-meta-${ setting }-font-size` }
+							name={ `gbs-meta-${ setting }-font-size` }
+							label={ __( 'Font Size', 'gbs' ) }
+							value={ ( undefined !== props.meta[`gbs-meta-${ setting }-font-size`] && ''!== props.meta[`gbs-meta-${ setting }-font-size`] ? props.meta[`gbs-meta-${ setting }-font-size`] : '' ) }
+							suffix={ 'px' }
+							onChange={ ( val ) => {
+								props.setMetaFieldValue( val, `gbs-meta-${ setting }-font-size` );
+							} }
+						/>
+						<ResponsiveSlider
+							id={ `gbs-meta-${ setting }-line-height` }
+							name={ `gbs-meta-${ setting }-line-height` }
+							label={ __( 'Line Height', 'gbs' ) }
+							value={ ( undefined !== props.meta[`gbs-meta-${ setting }-line-height`] && ''!== props.meta[`gbs-meta-${ setting }-line-height`] ? props.meta[`gbs-meta-${ setting }-line-height`] : '' ) }
+							suffix={ 'em' }
+							onChange={ ( val ) => {
+								props.setMetaFieldValue( val, `gbs-meta-${ setting }-line-height` );
+							} }
 						/>
 					</section>
 				</section>
@@ -346,7 +400,7 @@ const GlobalMetaSetup = props => {
 							<div className="gbs-meta-settings-content">
 								<table className="gbs-meta-settings-table widefat">
 									<tbody>
-										{ colorModalSettings }
+										{ 'Spacing controls will appear here...' }
 									</tbody>
 								</table>
 							</div>

@@ -8,6 +8,7 @@ function FontFamily( props ) {
 	const {
 		name,
 		value,
+		label,
 		font_weight_name = '',
 		font_weight_value = '',
 	} = props;
@@ -125,6 +126,7 @@ function FontFamily( props ) {
 
 	return (
 		<div className="gbs-font-family-field">
+			<h2 className='edit-post-preferences-modal__section-title gbs-typo-setting-heading'> { label } </h2>
 			<div className="gbs-selection-field">
 				<AsyncSelect
 					name={ name }
